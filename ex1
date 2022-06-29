@@ -1,0 +1,54 @@
+using System;
+
+namespace ConsoleApp13
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double tre()
+            {
+                Console.WriteLine("Введите 3 стороны, каждое значение с новой строки:");
+                double a = Convert.ToDouble(Console.ReadLine());
+                double b = Convert.ToDouble(Console.ReadLine());
+                double c = Convert.ToDouble(Console.ReadLine());
+                double p = (a + b + c) / 2;
+                if (a * a == b * b + c * c)
+                    return b * c / 2;
+                else if (b * b == a * a + c * c)
+                    return a * c / 2;
+                else if (c * c == a * a + b * b)
+                    return a * b / 2;
+                else
+                    return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            };
+            double elipse()
+            {
+                Console.WriteLine("Введите радиус:");
+                double a = Convert.ToDouble(Console.ReadLine());
+                return Math.PI * (a * a);
+            };
+            while (true)
+            {
+                Console.WriteLine("Выберите фигуру");
+                Console.WriteLine("1. Треугольник");
+                Console.WriteLine("2. Круг");
+                int c = Convert.ToInt32(Console.ReadLine());
+
+                switch (c)
+                {
+                    case 1:
+                        Console.WriteLine($"Площадь треугольника равна: {Math.Round(tre(),2)}\n");
+                        break;
+                    case 2:
+                        Console.WriteLine($"Площадь круга равна: {Math.Round(elipse(),2)}\n");
+                        break;
+                    default:
+                        Console.WriteLine("Напишите либо 1 либо 2\n");
+                        break;
+                }
+            }
+           
+        }
+    }
+}
