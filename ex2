@@ -1,4 +1,4 @@
 use DB;
 select a.name_prod,b.name_category from Product a, Category b
-where a.id_prod=b.id_product or a.id_category=b.id_category
-/*связь многое ко многим не эффективно создавать, не умею с ней работать.*/
+where a.id_prod=b.id_product or a.id_category is null
+/*связь многое ко многим - не удобно с ней работать*/
